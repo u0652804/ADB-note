@@ -19,3 +19,7 @@ reference : https://stackoverflow.com/questions/33898029/adb-how-to-tap-close-fr
 ### adb shell am
 
 reference : https://gist.github.com/tsohr/5711945
+
+start activity
+  
+    adb shell am start -n per.noah.todaylanuchertest/.MainActivity
