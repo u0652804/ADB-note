@@ -15,3 +15,7 @@ reference : https://stackoverflow.com/questions/33898029/adb-how-to-tap-close-fr
 3. 
 
        input keyevent DEL       
+
+### adb shell am
+
+reference : https://gist.github.com/tsohr/5711945
