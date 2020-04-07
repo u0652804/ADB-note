@@ -17,3 +17,15 @@ reference : https://gist.github.com/tsohr/5711945
 start activity
   
     adb shell am start -n per.noah.todaylanuchertest/.MainActivity
+
+### list service
+
+    adb shell service list
+
+### list cpu cost
+
+    adb shell dumpsys cpuinfo
+
+### get memory usage cost on a app  
+
+    adb shell dumpsys meminfo per.noah.dynamiclayout -d
