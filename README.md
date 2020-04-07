@@ -4,7 +4,7 @@
 
 reference : https://stackoverflow.com/questions/33898029/adb-how-to-tap-close-from-recent-apps-to-completelty-through-adb-one-liner-comm
 
-       input keyevent KEYCODE_APP_SWITCH
+       input keyevent 187 # KEYCODE_APP_SWITCH
 
        input keyevent 20
 
