@@ -29,3 +29,4 @@ start activity
 ### get memory usage cost on a app  
 
     adb shell dumpsys meminfo per.noah.dynamiclayout -d
+    
