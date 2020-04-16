@@ -30,3 +30,33 @@ start activity
 
     adb shell dumpsys meminfo per.noah.dynamiclayout -d
     
+### Windows make shell to Android
+
+Create a shell file and edit it e.g. hello.sh
+    
+    #!/system/bin/sh 
+    echo "starting"
+    while [ 1 ] 
+    do     
+        echo "run"     
+	 sleep 3
+    done
+
+Save file and push it to Android storage
+
+    adb push hello.sh /sdcard/
+
+Execute shell file in Android device
+
+    adb shell sh /sdcard/hello.sh
+    
+If you edit the file in Windows, then the execution will occur bug like 
+
+    /sdcard/hello.sh[3]: syntax error: 'while' unmatched
+    
+Fix the bug :
+
+1. open and edit the shell file by Notpad++
+
+2. 編輯 -> 換行格式 -> 轉換成Unix格式 (Windows edit type : CR+LF; Android know type : LF)
+
