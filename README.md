@@ -39,7 +39,7 @@ Create a shell file and edit it e.g. hello.sh
     while [ 1 ] 
     do     
         echo "run"     
-	 sleep 3
+	sleep 3
     done
 
 Save file and push it to Android storage
