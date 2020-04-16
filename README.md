@@ -60,3 +60,4 @@ Fix the bug :
 
 2. 編輯 -> 換行格式 -> 轉換成Unix格式 (Windows edit type : CR+LF; Android know type : LF)
 
+3. Push and execute the shell file again
