@@ -61,3 +61,8 @@ Fix the bug :
 2. 編輯 -> 換行格式 -> 轉換成Unix格式 (Windows edit type : CR+LF; Android know type : LF)
 
 3. Push and execute the shell file again
+
+
+### open url with browser by ADB cmd
+
+    adb shell am start -a android.intent.action.VIEW -d https://www.google.com/
