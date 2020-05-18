@@ -76,7 +76,7 @@ Fix the bug :
 	$ adb shell
 	# mount -o remount,rw -t yaffs2 /dev/block/mtdblock3 /system 
 	# cat /sdcard/test.apk > /system/app/test.apk 
-	# mount -o remount,ro -t yaffs2 /dev/block/mtdblock3 /system // 还原分区属性，只读。
+	# mount -o remount,ro -t yaffs2 /dev/block/mtdblock3 /system
 	# exit
 	$ exit
 	
