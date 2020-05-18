@@ -66,3 +66,18 @@ Fix the bug :
 ### open url with browser by ADB cmd
 
     adb shell am start -a android.intent.action.VIEW -d https://www.google.com/
+
+## install system app with .apk file
+
+	$ adb push test.apk /sdcard/
+	$ adb root
+	$ adb disable-verity
+	$ adb remount
+	$ adb shell
+	# mount -o remount,rw -t yaffs2 /dev/block/mtdblock3 /system 
+	# cat /sdcard/SecureSetting.apk > /system/app/SecureSetting.apk 
+	# mount -o remount,ro -t yaffs2 /dev/block/mtdblock3 /system // 还原分区属性，只读。
+	# exit
+	$ exit
+	
+	adb reboot
