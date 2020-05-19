@@ -94,6 +94,8 @@ Build.grandle(app)
             signingConfig signingConfigs.config
         }
 	
+	// next step : Android Studio, Build->APK
+	
 Adb cmd list	
 
 	adb root # need root device
@@ -104,3 +106,5 @@ Adb cmd list
 	adb disable-verity
 	
 	adb reboot
+
+Update APP : run directly
