@@ -69,15 +69,38 @@ Fix the bug :
 
 ## install system app with .apk file
 
-	$ adb push test.apk /sdcard/
-	$ adb root
-	$ adb disable-verity
-	$ adb remount
-	$ adb shell
-	# mount -o remount,rw -t yaffs2 /dev/block/mtdblock3 /system 
-	# cat /sdcard/test.apk > /system/app/test.apk 
-	# mount -o remount,ro -t yaffs2 /dev/block/mtdblock3 /system
-	# exit
-	$ exit
+ref : 
+
+1. check app is system or not : https://rdzhou.github.io/2017/12/20/How-to-Check-If-an-App-is-System-App-or-Not/
+
+2. sign build and push apk file as a system app : https://connorlin.github.io/2016/04/27/%E8%AE%A9Android-Studio%E6%94%AF%E6%8C%81%E7%B3%BB%E7%BB%9F%E7%AD%BE%E5%90%8D(%E8%AF%81%E4%B9%A6)/
+
+Build.grandle(app)
+
+	android {
+	    // add
+	    signingConfigs {
+		config {
+		    keyAlias 'alias_name'
+		    keyPassword '...'
+		    storeFile file('keystoreFilePath')
+		    storePassword '...'
+		}
+	    }
+	    
+	buildTypes {
+        // add
+        debug {
+            signingConfig signingConfigs.config
+        }
+	
+Adb cmd list	
+
+	adb root # need root device
+	adb remount
+	adb push test.apk > /system/priv-app/test.apk 
+	
+	# if first push file fail => push again
+	adb disable-verity
 	
 	adb reboot
